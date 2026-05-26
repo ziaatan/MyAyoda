@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyAyoda - Low Fidelity Wireframe</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Standar Lo-Fi: Abu-abu, Hitam, Putih */
+        .lofi-bg { background-color: #f3f4f6; }
+        .lofi-border { border: 2px solid #d1d5db; }
+        .lofi-placeholder { background-color: #e5e7eb; border: 2px dashed #9ca3af; }
+        .lofi-text-main { color: #1f2937; }
+        .lofi-text-muted { color: #6b7280; }
+        .lofi-btn { background-color: #374151; color: white; }
+    </style>
+</head>
+<body class="lofi-bg lofi-text-main font-mono">
+
+    <!-- NAVBAR WIREFRAME -->
+    <nav class="bg-white border-b-2 border-gray-300 sticky top-0 z-50 px-4 py-3">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 lofi-placeholder"></div> <!-- Logo Placeholder -->
+                <span class="font-bold text-lg uppercase">MyAyoda</span>
+            </div>
+            <div class="hidden md:flex gap-6 text-sm font-bold">
+                <span>[BERANDA]</span>
+                <span>[BOOKING]</span>
+                <span>[JADWAL]</span>
+            </div>
+            <!-- Bagian Akun -->
+            <div class="flex items-center gap-2 border-2 border-gray-300 px-3 py-1 rounded-md">
+                <div class="w-4 h-4 bg-gray-400 rounded-full"></div>
+                <span class="text-xs font-bold">AKUN</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION WIREFRAME -->
+    <section class="p-4 md:p-10">
+        <div class="max-w-6xl mx-auto lofi-placeholder h-64 md:h-96 flex flex-col items-center justify-center text-center p-6">
+            <div class="bg-white px-4 py-2 mb-4 border-2 border-gray-400 font-bold text-xl md:text-4xl">
+                [JUDUL UTAMA APLIKASI MYAYODA]
+            </div>
+            <div class="bg-gray-200 h-4 w-3/4 mb-2"></div>
+            <div class="bg-gray-200 h-4 w-1/2 mb-6"></div>
+            <div class="w-40 h-12 lofi-btn flex items-center justify-center font-bold">CTA BUTTON</div>
+        </div>
+    </section>
+
+    <!-- CONTENT SECTION (BOOKING LAYOUT) -->
+    <section class="px-4 py-10">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8">
+            
+            <!-- Kolom Kalender -->
+            <div class="lg:col-span-1 bg-white lofi-border p-6 rounded-lg">
+                <div class="h-6 w-full bg-gray-200 mb-6 text-center text-xs pt-1">BULAN & TAHUN</div> 
+                <div class="grid grid-cols-7 gap-2">
+                    <div class="w-8 h-8 lofi-placeholder rounded-full"></div>
+                    <div class="w-8 h-8 lofi-placeholder rounded-full"></div>
+                    <div class="w-8 h-8 lofi-placeholder rounded-full"></div>
+                    <div class="w-8 h-8 lofi-placeholder rounded-full"></div>
+                    <div class="w-8 h-8 lofi-placeholder rounded-full"></div>
+                    <div class="w-8 h-8 bg-gray-800 rounded-full"></div> <!-- Selected -->
+                    <div class="w-8 h-8 lofi-placeholder rounded-full"></div>
+                </div>
+            </div>
+
+            <!-- Kolom List Dokter -->
+            <div class="lg:col-span-2 space-y-6">
+                <div class="h-8 w-48 bg-gray-300 mb-4 flex items-center px-3 text-[10px] font-bold text-white">TANGGAL TERPILIH</div> 
+                
+                <!-- Card Dokter Lo-Fi -->
+                <div class="bg-white lofi-border p-5 rounded-lg flex flex-col gap-4">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 lofi-placeholder rounded-full"></div> 
+                        <div>
+                            <div class="h-4 w-32 bg-gray-800 mb-2"></div> <!-- Name -->
+                            <div class="h-3 w-20 bg-gray-300"></div> <!-- Spec -->
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-4 md:grid-cols-6 gap-2">
+                        <div class="h-8 lofi-border flex items-center justify-center text-[10px] font-bold">[JAM]</div>
+                        <div class="h-8 lofi-border flex items-center justify-center text-[10px] font-bold">[JAM]</div>
+                        <div class="h-8 lofi-border flex items-center justify-center text-[10px] font-bold">[JAM]</div>
+                        <div class="h-8 lofi-border flex items-center justify-center text-[10px] font-bold">[JAM]</div>
+                    </div>
+                </div>
+
+                <!-- Card Dokter 2 (Disabled/Opacity) -->
+                <div class="bg-white lofi-border p-5 rounded-lg opacity-50">
+                    <div class="h-4 w-32 bg-gray-400 mb-4"></div>
+                    <div class="h-20 w-full lofi-placeholder flex items-center justify-center text-[10px]">DOKTER TIDAK TERSEDIA</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER/LOKASI WIREFRAME -->
+    <section class="bg-white border-t-2 border-gray-300 p-10 pb-24 md:pb-10">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row gap-10">
+            <!-- Info Alamat & Operasional -->
+            <div class="flex-1 space-y-6">
+                <div>
+                    <h3 class="font-bold border-b-2 border-gray-800 mb-2 inline-block">ALAMAT LENGKAP KLINIK</h3>
+                    <p class="text-sm text-gray-600 mt-2 italic">Ruko Crystal Lane No.65, Paku Jaya, Serpong Utara, Tangerang Selatan (Alam Sutera).</p>
+                </div>
+                <div>
+                    <h3 class="font-bold border-b-2 border-gray-800 mb-2 inline-block">JAM OPERASIONAL</h3>
+                    <p class="text-sm text-gray-600 mt-2 italic">Senin - Sabtu: 08:00 - 20:00<br>Minggu: 09:00 - 15:00</p>
+                </div>
+            </div>
+            
+            <!-- Map Area -->
+            <div class="flex-1">
+                <div class="h-48 lofi-placeholder rounded-xl flex flex-col items-center justify-center gap-2">
+                    <div class="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center font-bold">!</div>
+                    <span class="text-gray-500 font-bold text-sm uppercase">MAP AREA</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MOBILE NAV WIREFRAME -->
+    <div class="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t-2 border-gray-300 h-16 flex justify-around items-center px-4">
+        <div class="w-10 h-10 lofi-placeholder rounded-md flex items-center justify-center text-[8px]">HOME</div>
+        <div class="w-10 h-10 bg-gray-800 rounded-md flex items-center justify-center text-[8px] text-white">BOOK</div>
+        <div class="w-10 h-10 lofi-placeholder rounded-md flex items-center justify-center text-[8px]">JADWAL</div>
+    </div>
+
+</body>
+</html>
