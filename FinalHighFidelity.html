@@ -30,7 +30,7 @@
 </head>
 <body class="bg-lightbg text-slate-800 antialiased">
 
-    <!-- MODAL KONFIRMASI -->
+    
     <div id="confirm-modal" class="hidden fixed inset-0 z-[100] flex items-center justify-center px-4">
         <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" onclick="closeConfirm()"></div>
         <div class="bg-white relative w-full max-w-sm rounded-[2rem] p-8 shadow-2xl fade-in">
@@ -47,7 +47,7 @@
     </div>
 
 
-    <!-- MODAL RATE & REVIEW - muncul setelah booking berhasil -->
+    
     <div id="review-modal" class="hidden fixed inset-0 z-[120] flex items-center justify-center px-4">
         <div class="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
         <div class="bg-white relative w-full max-w-md rounded-[2rem] p-8 shadow-2xl fade-in">
@@ -81,7 +81,7 @@
 
 
 
-    <!-- MODAL REMINDER BOOKING -->
+    
     <div id="reminder-modal" class="hidden fixed inset-0 z-[130] flex items-center justify-center px-4">
         <div class="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
         <div class="bg-white relative w-full max-w-md rounded-[2rem] p-8 shadow-2xl fade-in">
@@ -99,7 +99,7 @@
     </div>
 
 
-    <!-- NAVBAR -->
+   
     <nav class="bg-white shadow-sm sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
             <div class="flex items-center gap-3 cursor-pointer" onclick="showView('beranda')">
@@ -128,7 +128,7 @@
 
     <main class="w-full min-h-screen relative pb-24 md:pb-10">
 
-        <!-- VIEW: BERANDA -->
+        
         <section id="view-beranda" class="fade-in">
             <div class="relative w-full h-[60vh] md:h-[80vh] bg-slate-900 overflow-hidden">
                 <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=2000&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover opacity-60">
@@ -140,7 +140,7 @@
                 </div>
             </div>
 
-            <!-- Lokasi & Jam Operasional -->
+            
             <div class="max-w-6xl mx-auto px-4 py-16 md:py-24">
                 <div class="flex flex-col lg:flex-row gap-12">
                     <div class="w-full lg:w-1/2">
@@ -171,7 +171,7 @@
             </div>
         </section>
 
-        <!-- VIEW: BOOKING -->
+      
         <section id="view-booking" class="fade-in max-w-6xl mx-auto px-4 py-12 hidden">
             <div class="text-center mb-10">
                 <h1 class="text-3xl font-bold text-slate-800">Atur Janji Temu <span class="text-primary">MyAyoda</span></h1>
@@ -201,7 +201,7 @@
             </div>
         </section>
 
-        <!-- VIEW: JADWAL SAYA -->
+       
         <section id="view-jadwal" class="fade-in max-w-4xl mx-auto px-4 py-12 hidden">
             <div class="mb-8">
                 <h1 class="text-3xl font-bold text-slate-800">Jadwal Saya</h1>
@@ -210,7 +210,7 @@
             <div id="jadwal-list-container" class="space-y-4"></div>
         </section>
 
-        <!-- VIEW: PROFILE -->
+        
         <section id="view-profile" class="fade-in max-w-4xl mx-auto px-4 py-12 hidden">
             <div class="flex justify-between items-end mb-8">
                 <h1 class="text-3xl font-bold text-slate-800">Profil Akun</h1>
@@ -224,7 +224,7 @@
             <div id="profile-history-container" class="space-y-4"></div>
         </section>
 
-        <!-- VIEW: LOGIN -->
+      
         <section id="view-login" class="fade-in px-4 hidden flex flex-col items-center justify-center min-h-[60vh]">
             <div class="bg-white p-8 rounded-[2rem] shadow-2xl w-full max-w-md text-center border">
                 <h2 class="text-2xl font-bold mb-8">Masuk MyAyoda</h2>
@@ -236,7 +236,7 @@
             </div>
         </section>
 
-        <!-- VIEW: TICKET -->
+       
         <section id="view-ticket" class="fade-in max-w-lg mx-auto px-4 py-8 hidden">
             <div class="bg-white rounded-[2.5rem] shadow-2xl overflow-hidden border">
                 <div class="bg-primary p-8 text-center text-white">
@@ -260,7 +260,7 @@
 
     </main>
 
-    <!-- MOBILE NAV -->
+   
     <div class="md:hidden fixed bottom-5 left-4 right-4 h-18 glass rounded-3xl border border-white shadow-2xl flex justify-around items-center z-50 px-4 py-2">
         <button onclick="showView('beranda')" class="flex flex-col items-center p-2 text-slate-400">
             <i class="fas fa-home text-lg"></i><span class="text-[9px] font-bold mt-1">BERANDA</span>
@@ -409,7 +409,7 @@
 
         function executeBooking(doc, time) {
             const code = 'AYO-' + Math.random().toString(36).substr(2, 4).toUpperCase();
-            // Simpan waktu lengkap dalam ISO untuk perbandingan nanti
+            
             const fullBookingDate = new Date(selectedDate);
             const [h, m] = time.split(':');
             fullBookingDate.setHours(parseInt(h), parseInt(m), 0, 0);
@@ -426,7 +426,7 @@
             myBookings.push(booking);
             localStorage.setItem('my_ayoda_bookings', JSON.stringify(myBookings));
             
-            // Tampilkan tiket
+           
             document.getElementById('ticket-doctor').innerText = doc;
             document.getElementById('ticket-code').innerText = code;
             document.getElementById('ticket-date-time').innerText = `${booking.dateLabel} | ${time}`;
@@ -437,7 +437,7 @@
             closeConfirm();
             showView('ticket');
 
-            // Jadwalkan reminder popup/browser notification H-3 jam sebelum jadwal
+            
             scheduleReminderThreeHoursBefore(booking);
 
             setTimeout(function() {
@@ -455,14 +455,14 @@
             const now = new Date();
 
             myBookings.slice().reverse().forEach(b => {
-                // LOGIKA: CEK APAKAH WAKTU SUDAH LEWAT
+               
                 const bookingTime = new Date(b.dateTimeISO);
                 const isFinished = bookingTime < now;
 
                 const item = document.createElement('div');
                 item.className = `bg-white p-6 rounded-3xl border flex justify-between items-center shadow-sm transition-all ${isFinished ? 'opacity-60 bg-slate-50' : ''}`;
                 
-                // Tentukan aksi tombol
+               
                 let actionArea = '';
                 if (isFinished) {
                     actionArea = `<span class="bg-emerald-100 text-emerald-600 font-bold text-[10px] px-3 py-1.5 rounded-lg uppercase tracking-wider">Selesai</span>`;
@@ -493,8 +493,7 @@
         }
 
 
-        // FITUR: Dokter ganti jadwal / berhalangan hadir
-        // Aturan: notifikasi hanya boleh dikirim maksimal H-1 / minimal 24 jam sebelum jadwal.
+        
         function notifyDoctorUnavailable(bookingId, message) {
             const booking = myBookings.find(b => b.id === bookingId);
             if (!booking) return;
@@ -517,9 +516,7 @@
             alert("Notifikasi perubahan jadwal berhasil dikirim.");
         }
 
-        // Contoh penggunaan di console:
-        // notifyDoctorUnavailable(ID_BOOKING, "Dr. Adit berhalangan hadir. Mohon pilih jadwal pengganti.");
-
+        
 
         function cancelBooking(id) {
             const booking = myBookings.find(b => b.id === id);
@@ -617,7 +614,7 @@
             const reminderTime = new Date(bookingTime.getTime() - 3 * 60 * 60 * 1000);
             const delay = reminderTime.getTime() - new Date().getTime();
 
-            // Reminder otomatis akan muncul kalau website masih terbuka.
+            
             if (delay > 0) {
                 setTimeout(() => {
                     showBrowserNotification(booking);
@@ -694,13 +691,13 @@
                 return;
             }
 
-            // Review tidak disimpan, hanya feedback popup.
+         
             closeReviewPopup();
             alert('Terima kasih atas review kamu!');
         }
 
 
-        // Inisialisasi awal
+        
         updateNavUI();
         scheduleAllActiveReminders();
     </script>
